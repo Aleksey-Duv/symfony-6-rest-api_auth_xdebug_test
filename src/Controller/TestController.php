@@ -21,7 +21,7 @@ class TestController extends AbstractController
         ]);
     }
 
-    #[Route('/getAllUser', name: 'get_allures', methods: 'GET')]
+    #[Route('/api/getAllUser', name: 'get_allures', methods: 'GET')]
     public function getAllUser(entityManagerInterface $manager): JsonResponse
     {
         $users = $manager->getRepository(User::class)->findAll();
@@ -46,7 +46,7 @@ class TestController extends AbstractController
 
     }
 
-    #[Route('/userCreate', name: 'user_create', methods: 'POST')]
+    #[Route('/api/userCreate', name: 'user_create', methods: 'POST')]
     public function userCreate(Request $request, UserPasswordHasherInterface $passwordHash, entityManagerInterface $manager): JsonResponse
     {
         // dd($request);
